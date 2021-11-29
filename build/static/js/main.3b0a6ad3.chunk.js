@@ -1,0 +1,2 @@
+(this["webpackJsonppa-react-starter"]=this["webpackJsonppa-react-starter"]||[]).push([[0],{11:function(e,t,r){"use strict";r.r(t);var c=r(1),n=r.n(c),o=r(3),s=r.n(o),a=(r(8),r(9),r(0));var i=function(){return Object(a.jsx)("div",{children:Object(a.jsx)("h1",{className:"doNotRemoveMe",children:"Hello world."})})};s.a.render(Object(a.jsx)(n.a.StrictMode,{children:Object(a.jsx)(i,{})}),document.getElementById("root"))},8:function(e,t,r){},9:function(e,t,r){}},[[11,1,2]]]);
+//# sourceMappingURL=main.3b0a6ad3.chunk.js.map
