@@ -15,58 +15,65 @@
     <p>There are no recipes to list</p>
     <p>
 
-    <button class="open-button" onclick="openForm()">Add Recipe</button>
-      
-      <div class="form-popup" id="myForm" style="display: none">
-        <form class="form-container">
-            <label for="fname">recipe-name</label><br>
-            <input type="text" id="fname" name="fname"><br>
-            <label for="lname">recipe-instructions</label><br>
-            <input type="text" id="lname" name="lname">
 
-          <button class="open-button" onclick="newElement">Submit</button>
-        </form>
-      </div>
-      
-      <script>
-      function openForm() {
-          x = document.getElementById("myForm");
-        if(x.style.display === "none") {
-            x.style.display = "block";
+        <button class="open-button" onclick="openForm()" id="add-recipe-btn">Add Recipe</button>
+
+        <div class="form-popup" id="myForm" style="display: none">
+          <form class="form-container">
+        
+            <label for="myInput"> recipe-name: </label><br>
+            <input type="text" id="myInput" value="" style="margin:5px;"><br>
+             <label for="myInput1"> recipe-instruction: </label><br>
+            <input type="text" id="myInput1" value="" style="margin:5px;">
+        
+            <button onclick="newElement()" class="addBtn" type="button">Submit</button>
+          </form>
+        </div>
+        
+        <script>
+        function openForm() {
+            x = document.getElementById("myForm");
+          if(x.style.display === "none") {
+            document.getElementById("add-recipe-btn").style.display = "none"
+              x.style.display = "block";
+            } else {
+              x.style.display = "none";
+            }
+        }
+        
+        
+        // Create a new list item when clicking on the "Add" button
+        function newElement() {
+          if(close.length == 0) {
+            document.getElementById("recipes_empty").style.display = 'none';
+          }
+          var li = document.createElement("li");
+          var spanelement1 = document.createElement("span");
+          spanelement1.appendChild( document.createTextNode(document.getElementById("myInput").value) );
+            var spanelement2 = document.createElement("span");
+          spanelement2.appendChild( document.createTextNode(document.getElementById("myInput1").value));
+        
+          li.appendChild(spanelement1);
+          li.appendChild(spanelement2);
+          if (spanelement1 === '' || spanelement2 === '') {
+            alert("You must write something!");
           } else {
-            x.style.display = "none";
+            document.getElementById("myUL").appendChild(li);
           }
-      }
-      
-      
-      // Create a new list item when clicking on the "Add" button
-      function newElement() {
-        if(close.length == 0) {
-          document.getElementById("recipes_empty").style.display = 'none';
-        }
-        var li = document.createElement("li");
-        var inputValue = document.getElementById("myInput").value;
-        var t = document.createTextNode(inputValue);
-        li.appendChild(t);
-        if (inputValue === '') {
-          alert("You must write something!");
-        } else {
-          document.getElementById("myUL").appendChild(li);
-        }
-        document.getElementById("myInput").value = "";
-      
-        var span = document.createElement("SPAN");
-        span.className = "close";
-        li.appendChild(span);
-      
-        for (i = 0; i < close.length; i++) {
-          close[i].onclick = function() {
-            var div = this.parentElement;
-            div.style.display = "none";
+          document.getElementById("myInput").value = "";
+        
+          var span = document.createElement("SPAN");
+          span.className = "close";
+          li.appendChild(span);
+        
+          for (i = 0; i < close.length; i++) {
+            close[i].onclick = function() {
+              var div = this.parentElement;
+              div.style.display = "none";
+            }
           }
+          document.getElementById("myForm").style.display = "none"
         }
-        document.getElementById("myForm").style.display = "none"
-      }
       </script>
     
     <div id="root"></div>
