@@ -10,21 +10,18 @@
     <title>My Recipes</title>
   </head>
   <body>
-      <heading>My Recipes</heading>
-    <sub>There are no recipes to list</sub>
+      <h3>My Recipes</h3>
+    <p>There are no recipes to list</p>
     
     <button type="button" onclick="openForm()">Add Recipes</button> 
     <div id = "form1" style = "display:none">
       <form  id="formirri" method="post" action="" target="_parent">
-             <br/><br/>
-          <div id="demo">
-          <table width="230px" align="center" style="box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 100);"><tr><td colspan=1></td></tr>
-      <tr>
-          <td><a href="#" class="close-classic"></a></td>
-      </tr>
-      </table>
-      
-      </div>
+       
+          <label for="fname">First name:</label><br>
+          <input type="text" id="fname" name="fname" value="John"><br>
+          <label for="lname">Last name:</label><br>
+          <input type="text" id="lname" name="lname" value="Doe">
+       
       </form>
       </div>
 <script>
