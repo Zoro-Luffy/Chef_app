@@ -10,9 +10,29 @@
     <title>My Recipes</title>
   </head>
   <body>
-      <header>My Recipes</header>
+      <heading>My Recipes</heading>
     <sub>There are no recipes to list</sub>
-    <button type="button">Add Recipes</button>
+    <h3>
+    <button type="button" onclick="openForm()">Add Recipes</button> </h3>
+    <div id = "form1" style = "display:none">
+      <form  id="formirri" method="post" action="" target="_parent">
+             <br/><br/>
+          <div id="demo">
+          <table width="230px" align="center" style="box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 100);"><tr><td colspan=1></td></tr>
+      <tr>
+          <td><a href="#" class="close-classic"></a></td>
+      </tr>
+      </table>
+      
+      </div>
+      </form>
+      </div>
+<script>
+function openForm(){
+ document.getElementById('form1').style.display = '';
+
+}
+</script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>
