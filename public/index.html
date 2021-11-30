@@ -44,9 +44,9 @@
         
         // Create a new list item when clicking on the "Add" button
         function newElement() {
-          if(close.length == 0) {
-            document.getElementById("recipes_empty").style.display = 'none';
-          }
+          // if(close.length == 0) {
+          //   document.getElementById("recipes_empty").style.display = 'none';
+          // }
           var li = document.createElement("li");
           var spanelement1 = document.createElement("span");
           spanelement1.appendChild( document.createTextNode(document.getElementById("myInput").value) );
@@ -72,7 +72,7 @@
               div.style.display = "none";
             }
           }
-          document.getElementById("myForm").style.display = "none"
+          //document.getElementById("myForm").style.display = "none"
         }
       </script>
     
